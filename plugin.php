@@ -46,8 +46,5 @@ function rest_api_filter_add_filter_param( $args, $request ) {
 			$args[ $var ] = $filter[ $var ];
 		}
 	}
-
-	$args = wp_parse_args( $filter, $args );
-
 	return $args;
 }
