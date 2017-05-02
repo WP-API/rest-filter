@@ -4,7 +4,7 @@
  * Description: This plugin adds a "filter" query parameter to API post collections to filter returned results based on public WP_Query parameters, adding back the "filter" parameter that was removed from the API when it was merged into WordPress core.
  * Author: WP REST API Team
  * Author URI: http://v2.wp-api.org
- * Version 0.1
+ * Version: 0.1
  * License: GPL2+
  **/
 
