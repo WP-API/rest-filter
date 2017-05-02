@@ -35,7 +35,7 @@ function rest_api_filter_add_filter_param( $args, $request ) {
 	$filter = $request['filter'];
 
 	if ( isset( $filter['posts_per_page'] ) && ( (int) $filter['posts_per_page'] >= 1 && (int) $filter['posts_per_page'] <= 100 ) ) {
-		$args['post_per_page'] = $filter['posts_per_page'];
+		$args['posts_per_page'] = $filter['posts_per_page'];
 	}
 
 	global $wp;
