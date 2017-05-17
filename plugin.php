@@ -39,7 +39,7 @@ function rest_api_filter_add_filter_param( $args, $request ) {
 	}
 
 	global $wp;
-	$vars = apply_filters( 'query_vars', $wp->public_query_vars );
+	$vars = apply_filters( 'rest_query_vars', $wp->public_query_vars );
 
 	foreach ( $vars as $var ) {
 		if ( isset( $filter[ $var ] ) ) {
