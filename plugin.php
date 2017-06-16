@@ -43,7 +43,7 @@ function rest_api_filter_add_filter_param( $args, $request ) {
 
 	function allow_meta_query( $valid_vars )
 	{
-	    $valid_vars = array_merge( $valid_vars, array( 'meta_key', 'meta_value', 'meta_compare' ) );
+	    $valid_vars = array_merge( $valid_vars, array( 'meta_query', 'meta_key', 'meta_value', 'meta_compare' ) );
 	    return $valid_vars;
 	}
 	$vars = allow_meta_query( $vars );
