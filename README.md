@@ -10,5 +10,5 @@ Use the `filter` parameter on any post endpoint such as `/wp/v2/posts` or `/wp/v
 argument like so:
 
 ```javascript
-fetch( 'https://example.com/wp-json/wp/v2/posts?filter[name]=the-slug');
+fetch( 'https://domain.com/wp-json/acf/v3/customposttype?filter[meta_key]=acfkey&filter[meta_value]=acfvalue');
 ```
