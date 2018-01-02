@@ -1,9 +1,9 @@
 <?php
 /**
- * Plugin Name: WP REST API filter parameter
- * Description: This plugin adds a "filter" query parameter to API post collections to filter returned results based on public WP_Query parameters, adding back the "filter" parameter that was removed from the API when it was merged into WordPress core.
- * Author: WP REST API Team
- * Author URI: http://v2.wp-api.org
+ * Plugin Name: WP REST Filter
+ * Description: Since WordPress 4.7 the `filter` argument for any post endpoint was removed. This plugin restores the `filter` parameter for websites that were previously using it.
+ * Author: SK8Tech
+ * Author URI: https://sk8.tech
  * Version: 0.1
  * License: GPL2+
  **/
