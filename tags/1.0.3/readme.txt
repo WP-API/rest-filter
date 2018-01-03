@@ -61,7 +61,7 @@ Issues and [pull requests](https://github.com/sk8-pty-ltd/wp-rest-filter/pulls) 
  
 == Screenshots ==
  
-1. /assets/screenshot.png
+1. An sample GET request using [WP REST Filter](https://wordpress.org/plugins/wp-rest-filter/).
  
 == Changelog ==
  
