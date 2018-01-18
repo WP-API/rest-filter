@@ -9,7 +9,7 @@ Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
  
-Since WordPress 4.7 the `filter` argument for any post endpoint was removed. This plugin restores the `filter` parameter for websites that were previously using it.
+WP REST Filter restores the `filter` argument for any post endpoint on WordPress websites, since its removal in WordPress 4.7.
  
 == Description ==
  
@@ -38,7 +38,7 @@ fetch( 'https://domain.com/wp-json/acf/v3/ads?filter[meta_key]=currency&filter[m
  
 == Installation ==
   
-1. Upload `plugin-name.php` to the `/wp-content/plugins/` directory
+1. Upload `wp-api-filter.php` to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
  
 == Frequently Asked Questions ==
