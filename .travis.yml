@@ -7,6 +7,26 @@ sudo: false
 php:
   - 7.0
   - 7.1
+
+before_deploy:
+  - mkdir build
+  - cp LICENSE build
+  - cp README.txt build
+  - cp wp-api-filter.php build
+ 
+deploy:
+  - provider: wordpress-plugin
+    edge:
+      source: TypistTech/dpl
+      branch: add-wordpress-plugin-deployment
+    on:
+      php: 7.1
+      tags: true
+      repo: SK8-PTY-LTD/wp-rest-filter
+    slug: wp-rest-filter
+    username: sk8tech
+    password: $WORDPRESS_ORG_PASSWORD
+    build_dir: build 
  
 script:
   # Run your tests here.
