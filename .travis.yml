@@ -7,6 +7,10 @@ sudo: false
 php:
   - 7.0
   - 7.1
+ 
+script:
+  # Run your tests here.
+  - echo 'Tested'
 
 before_deploy:
   - mkdir build
@@ -29,7 +33,3 @@ deploy:
     password: $WORDPRESS_ORG_PASSWORD
     build_dir: build
     assets_dir: assets
- 
-script:
-  # Run your tests here.
-  - echo 'Tested'
