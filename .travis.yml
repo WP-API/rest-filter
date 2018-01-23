@@ -27,7 +27,7 @@ deploy:
     username: sk8tech
     password: $WORDPRESS_ORG_PASSWORD
     build_dir: build 
-    assets_dir: assets
+    # assets_dir: assets
  
 script:
   # Run your tests here.
