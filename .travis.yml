@@ -1,0 +1,13 @@
+# .travis.yml
+ 
+language: php
+ 
+sudo: false
+ 
+php:
+  - 7.0
+  - 7.1
+ 
+script:
+  # Run your tests here.
+  - echo 'Tested'
