@@ -13,6 +13,7 @@ before_deploy:
   - cp LICENSE build
   - cp readme.txt build
   - cp wp-api-filter.php build
+  - ls build
  
 deploy:
   - provider: wordpress-plugin
@@ -26,8 +27,8 @@ deploy:
     slug: wp-rest-filter
     username: sk8tech
     password: $WORDPRESS_ORG_PASSWORD
-    build_dir: /build 
-    assets_dir: /assets
+    build_dir: build
+    assets_dir: assets
  
 script:
   # Run your tests here.
