@@ -11,7 +11,7 @@ php:
 before_deploy:
   - mkdir build
   - cp LICENSE build
-  - cp README.txt build
+  - cp readme.txt build
   - cp wp-api-filter.php build
  
 deploy:
