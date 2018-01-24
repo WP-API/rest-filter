@@ -22,5 +22,5 @@ deploy:
   provider: script
   script: $TRAVIS_BUILD/deploy/deploy.sh
   # Restrict deployment only for tags
-  # on:
-  #   tags: true
+  on:
+    tags: true
