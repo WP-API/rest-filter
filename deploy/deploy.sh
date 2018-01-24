@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+pwd
+ll
+
 #  1. Clone complete SVN repository to separate directory
 svn co $WORDPRESS_ORG_REPO ../svn
 
