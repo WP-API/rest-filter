@@ -21,7 +21,7 @@ deploy:
   # Use script as a deployment tool
   skip_cleanup: true
   provider: script
-  script: $TRAVIS_BUILD/deploy/deploy.sh
+  script: chmod +x deploy/deploy.sh && deploy/deploy.sh
   # Restrict deployment only for tags
   on:
     tags: true
