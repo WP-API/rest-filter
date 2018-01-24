@@ -82,6 +82,10 @@ Issues and [pull requests](https://github.com/sk8-pty-ltd/wp-rest-filter/pulls) 
 1. An sample REST API GET request using [WP REST Filter](https://wordpress.org/plugins/wp-rest-filter/).
  
 == Changelog ==
+
+= 1.1.2 =
+
+* Added support for Multiple Meta Queries
  
 = 1.0.3 =
 * Minor README fixes.
