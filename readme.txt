@@ -34,6 +34,13 @@ Custom Post Type
 // fetch( 'https://domain.com/wp-json/acf/v3/customposttype?filter[meta_key]=acfkey&filter[meta_value]=acfvalue');
 fetch( 'https://domain.com/wp-json/acf/v3/ads?filter[meta_key]=currency&filter[meta_value]=AUD'); // here 'ads' is the endpoint for CPT
 ```
+```
+
+Multiple Meta Queries
+```
+// fetch( 'https://domain.com/wp-json/acf/v3/customposttype?filter[meta_key][0][key]=acfkey1&filter[meta_value][0][value]=acfvalue1&filter[meta_key][1][key]=acfkey2&filter[meta_value][1][value]=acfvalue2¡¯);
+fetch( 'https://domain.com/wp-json/acf/v3/ads?filter[meta_key][0][key]=currency&filter[meta_value][0][value]&filter[meta_key][1][key]=country&filter[meta_value][1][value]=Australia¡¯); // here 'ads' is the endpoint for CPT
+```
 
  
 == Installation ==
@@ -46,6 +53,11 @@ fetch( 'https://domain.com/wp-json/acf/v3/ads?filter[meta_key]=currency&filter[m
 = Why do I need WP REST Filter? =
  
 If you're planning on using your WordPress website as a Backend, and you're consuming RESTful api, you'll most probably need to filter results on your GET request. This is precisely what this plugin does.
+
+= Can I filter for multiple meta queries? =
+
+YES! 
+GET: `/wp-json/wp/v2/customposttype?filter[meta_query][0][key]=key1&filter[meta_query][0][value]=value1&filter[meta_query][0][key]=key2&filter[meta_query][0][value]=value2`
 
 = Can I Use this plugin to find posts by tags/categories? =
 
