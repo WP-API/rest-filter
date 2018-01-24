@@ -10,6 +10,8 @@ script:
   # Run your tests here.
   - php -l *.php
   - echo 'Tested'
+  - pwd
+  - ll
 
 branches:
   only:
