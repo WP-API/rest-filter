@@ -11,7 +11,9 @@ script:
   - php -l *.php
   - echo 'Tested'
   - pwd
-  - ll
+  - ls
+  - ls ../
+  - echo $TRAVIS_BUILD
 
 branches:
   only:
