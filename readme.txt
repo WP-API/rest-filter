@@ -45,7 +45,13 @@ fetch( 'https://domain.com/wp-json/acf/v3/ads?filter[meta_key]=currency&filter[m
  
 = Why do I need WP REST Filter? =
  
-If you're planning on using your WordPress website as a Backend, and you're consuming RESTful api, you'll most probably need to filter results on your GET request. This is percicely what this plugin does.
+If you're planning on using your WordPress website as a Backend, and you're consuming RESTful api, you'll most probably need to filter results on your GET request. This is precisely what this plugin does.
+
+= Can I Use this plugin to find posts by tags/categories? =
+
+Yes, however this is natively supported by WordPress 4.7+. This plugin is not necessary if you¡¯re looking to find posts by tags/categories.
+
+For more info, please [see this topic](https://wordpress.org/support/topic/empty-response-2/).
  
 = Does this work with Custom Post Type? =
  
