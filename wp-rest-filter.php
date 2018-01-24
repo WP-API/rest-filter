@@ -8,14 +8,14 @@
  * License: GPL2+
  **/
 
-add_action( 'rest_api_init', 'rest_api_filter_add_filters' );
+add_action( 'rest_api_init', 'wp_rest_filter_add_filters' );
 
  /**
   * Add the necessary filter to each post type
   **/
-function rest_api_filter_add_filters() {
+function wp_rest_filter_add_filters() {
 	foreach ( get_post_types( array( 'show_in_rest' => true ), 'objects' ) as $post_type ) {
-		add_filter( 'rest_' . $post_type->name . '_query', 'rest_api_filter_add_filter_param', 10, 2 );
+		add_filter( 'rest_' . $post_type->name . '_query', 'wp_rest_filter_add_filter_param', 10, 2 );
 	}
 }
 
@@ -26,7 +26,7 @@ function rest_api_filter_add_filters() {
  * @param  WP_REST_Request $request Full details about the request.
  * @return array $args.
  **/
-function rest_api_filter_add_filter_param( $args, $request ) {
+function wp_rest_filter_add_filter_param( $args, $request ) {
 	// Bail out if no filter parameter is set.
 	if ( empty( $request['filter'] ) || ! is_array( $request['filter'] ) ) {
 		return $args;
