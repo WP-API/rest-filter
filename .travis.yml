@@ -10,10 +10,6 @@ script:
   # Run your tests here.
   - php -l *.php
   - echo 'Tested'
-  - pwd
-  - ls
-  - ls ../
-  - echo $TRAVIS_BUILD
 
 branches:
   only:
@@ -23,6 +19,7 @@ branches:
 # Enable Travis deployment
 deploy:
   # Use script as a deployment tool
+  skip_cleanup: true
   provider: script
   script: $TRAVIS_BUILD/deploy/deploy.sh
   # Restrict deployment only for tags
