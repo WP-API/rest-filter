@@ -4,8 +4,6 @@
 svn co $WORDPRESS_ORG_REPO ../svn
 
 #  2. Copy git repository contents to SNV trunk/ directory
-ls ../
-ls ../svn/
 cp -R ./* ../svn/trunk/
 
 #  3. Go to trunk/
