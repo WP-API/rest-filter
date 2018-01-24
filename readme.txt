@@ -34,7 +34,6 @@ Custom Post Type
 // fetch( 'https://domain.com/wp-json/acf/v3/customposttype?filter[meta_key]=acfkey&filter[meta_value]=acfvalue');
 fetch( 'https://domain.com/wp-json/acf/v3/ads?filter[meta_key]=currency&filter[meta_value]=AUD'); // here 'ads' is the endpoint for CPT
 ```
-```
 
 Multiple Meta Queries
 ```
