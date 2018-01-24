@@ -11,10 +11,10 @@ script:
   - php -l *.php
   - echo 'Tested'
 
-# branches:
-#   only:
-#   # Enable Travis hook on tags (it is regular expression for semver tag)*
-#   - "/\\d\\.\\d\\.\\d/"
+branches:
+  only:
+  # Enable Travis hook on tags (it is regular expression for semver tag)*
+  - "/\\d\\.\\d\\.\\d/"
 
 # Enable Travis deployment
 deploy:
