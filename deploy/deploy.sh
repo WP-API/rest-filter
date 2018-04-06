@@ -4,12 +4,12 @@
 svn co $WORDPRESS_ORG_REPO ../svn
 
 #  2. Copy git repository contents to SNV trunk/ directory
-echo("2. Copy git:")
+echo "2. Copy git:"
 ls 
-echo("2.0 ./*")
+echo "2.0 ./*"
 ls ./*
 cp -R ./* ../svn/trunk/
-echo("2.1 svn/trunk:")
+echo "2.1 svn/trunk:"
 ls ../svn/trunk/
 
 #  3. Go to trunk/
