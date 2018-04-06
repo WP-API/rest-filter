@@ -4,13 +4,7 @@
 svn co $WORDPRESS_ORG_REPO ../svn
 
 #  2. Copy git repository contents to SNV trunk/ directory
-echo "2. Copy git:"
-ls 
-echo "2.0 ./*"
-ls ./*
 cp -R ./* ../svn/trunk/
-echo "2.1 svn/trunk:"
-ls ../svn/trunk/
 
 #  3. Go to trunk/
 cd ../svn/trunk/
@@ -29,7 +23,9 @@ rm .travis.yml
 
 # 8. Go to SVN home directory && copy trunk/ to tags/{tag}/
 cd ../
+svn rm trunk/wp-api-filter.php
 svn cp trunk tags/$TRAVIS_TAG
+svn add . --force
 
 # 9. Commit SVN tag
 svn ci  --message "Release $TRAVIS_TAG" \
