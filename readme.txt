@@ -3,7 +3,7 @@ Contributors: jack50n9, sk8tech, rachelbaker, joehoyle
 Donate link: https://sk8.tech/donate
 Tags: wp, rest, api, rest api, filter, acf, cpt, json
 Requires at least: 4.7.0
-Tested up to: 4.9.1
+Tested up to: 4.9.5
 Requires PHP: 5.2.4
 Stable tag: trunk
 License: GPLv2 or later

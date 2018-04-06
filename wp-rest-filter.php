@@ -4,7 +4,7 @@
  * Description: Since WordPress 4.7 the `filter` argument for any post endpoint was removed. This plugin restores the `filter` parameter for websites that were previously using it.
  * Author: SK8Tech
  * Author URI: https://sk8.tech
- * Version: 1.1.3
+ * Version: 1.1.4
  * License: GPL2+
  **/
 
