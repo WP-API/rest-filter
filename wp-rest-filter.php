@@ -53,5 +53,18 @@ function wp_rest_filter_add_filter_param( $args, $request ) {
 			$args[ $var ] = $filter[ $var ];
 		}
 	}
+
+
+	/**
+	 * Added support for 'before' & 'after' filtering for Custom Field
+	 * @author Jack
+	 * @see [How to filter posts modified after specific date in Wordpress API v2](https://stackoverflow.com/questions/47053462/how-to-filter-posts-modified-after-specific-date-in-wordpress-api-v2)
+	 * @todo Make it work...
+	 */
+	// if ( ( isset( $request['before'] ) || isset( $request['after'] ) ) && isset( $request['date_query_column'] ) ) {
+ //        $args['date_query'][0]['column'] = $request['date_query_column'];
+	// }
+
 	return $args;
+
 }
