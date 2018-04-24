@@ -53,7 +53,7 @@ fetch( 'https://domain.com/wp-json/wp/v2/cars?filter[meta_query][0][key]=currenc
  
 == Installation ==
   
-1. Upload `wp-api-filter.php` to the `/wp-content/plugins/` directory
+1. Upload `wp-rest-filter` folder to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
  
 == Frequently Asked Questions ==
