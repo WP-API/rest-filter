@@ -12,7 +12,7 @@ Update 'Version' number to x.x.x
 
 # SVN
 
-> co plugins.svn.wordpress.org/wp-rest-filter temp
+> svn co plugins.svn.wordpress.org/wp-rest-filter temp
 ## Copy every file from git repository to temp/trunk
 > cp -R ./* temp/trunk/
 ## Copy files to temp/tags folder for release, using svn
