@@ -17,6 +17,9 @@ function wp_rest_filter_add_filters() {
 	foreach ( get_post_types( array( 'show_in_rest' => true ), 'objects' ) as $post_type ) {
 		add_filter( 'rest_' . $post_type->name . '_query', 'wp_rest_filter_add_filter_param', 10, 2 );
 	}
+	foreach ( get_taxonomies( array( 'show_in_rest' => true ), 'objects' ) as $tax_type ) {
+		add_filter( 'rest_' . $tax_type->name . '_query', 'wp_rest_filter_add_filter_param', 10, 2 );
+	}
 }
 
 /**
