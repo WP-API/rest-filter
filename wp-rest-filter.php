@@ -1,73 +1,82 @@
 <?php
-/**
- * Plugin Name: WP REST Filter
- * Description: Since WordPress 4.7 the `filter` argument for any post endpoint was removed. This plugin restores the `filter` parameter for websites that were previously using it.
- * Author: SK8Tech
- * Author URI: https://sk8.tech
- * Version: 1.1.7
- * License: GPL2+
- **/
-
-add_action( 'rest_api_init', 'wp_rest_filter_add_filters' );
-
- /**
-  * Add the necessary filter to each post type
-  **/
-function wp_rest_filter_add_filters() {
-	foreach ( get_post_types( array( 'show_in_rest' => true ), 'objects' ) as $post_type ) {
-		add_filter( 'rest_' . $post_type->name . '_query', 'wp_rest_filter_add_filter_param', 10, 2 );
-	}
-	foreach ( get_taxonomies( array( 'show_in_rest' => true ), 'objects' ) as $tax_type ) {
-		add_filter( 'rest_' . $tax_type->name . '_query', 'wp_rest_filter_add_filter_param', 10, 2 );
-	}
-}
 
 /**
- * Add the filter parameter
+ * The plugin bootstrap file
  *
- * @param  array           $args    The query arguments.
- * @param  WP_REST_Request $request Full details about the request.
- * @return array $args.
- **/
-function wp_rest_filter_add_filter_param( $args, $request ) {
-	// Bail out if no filter parameter is set.
-	if ( empty( $request['filter'] ) || ! is_array( $request['filter'] ) ) {
-		return $args;
-	}
+ * This file is read by WordPress to generate the plugin information in the plugin
+ * admin area. This file also includes all of the dependencies used by the plugin,
+ * registers the activation and deactivation functions, and defines a function
+ * that starts the plugin.
+ *
+ * @link              https://sk8.tech
+ * @since             1.0.0
+ * @package           Wp_Rest_Filter
+ *
+ * @wordpress-plugin
+ * Plugin Name:       WP REST Filter
+ * Plugin URI:        https://sk8.tech
+ * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
+ * Version:           1.2.0
+ * Author:            SK8Tech
+ * Author URI:        https://sk8.tech
+ * License:           GPL-2.0+
+ * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
+ * Text Domain:       wp-rest-filter
+ * Domain Path:       /languages
+ */
 
-	$filter = $request['filter'];
+// If this file is called directly, abort.
+if (!defined('WPINC')) {
+	die;
+}
 
-	if ( isset( $filter['posts_per_page'] ) && ( (int) $filter['posts_per_page'] >= 1 && (int) $filter['posts_per_page'] <= 100 ) ) {
-		$args['posts_per_page'] = $filter['posts_per_page'];
-	}
+/**
+ * Currently plugin version.
+ * Start at version 1.0.0 and use SemVer - https://semver.org
+ * Rename this for your plugin and update it as you release new versions.
+ */
+define('PLUGIN_NAME_VERSION', '1.2.0');
 
-	global $wp;
-	$vars = apply_filters( 'rest_query_vars', $wp->public_query_vars );
+/**
+ * The code that runs during plugin activation.
+ * This action is documented in includes/class-wp-rest-filter-activator.php
+ */
+function activate_wp_rest_filter() {
+	require_once plugin_dir_path(__FILE__) . 'includes/class-wp-rest-filter-activator.php';
+	Wp_Rest_Filter_Activator::activate();
+}
 
-	function allow_meta_query( $valid_vars )
-	{
-	    $valid_vars = array_merge( $valid_vars, array( 'meta_query', 'meta_key', 'meta_value', 'meta_compare' ) );
-	    return $valid_vars;
-	}
-	$vars = allow_meta_query( $vars );
-	
-	foreach ( $vars as $var ) {
-		if ( isset( $filter[ $var ] ) ) {
-			$args[ $var ] = $filter[ $var ];
-		}
-	}
+/**
+ * The code that runs during plugin deactivation.
+ * This action is documented in includes/class-wp-rest-filter-deactivator.php
+ */
+function deactivate_wp_rest_filter() {
+	require_once plugin_dir_path(__FILE__) . 'includes/class-wp-rest-filter-deactivator.php';
+	Wp_Rest_Filter_Deactivator::deactivate();
+}
 
+register_activation_hook(__FILE__, 'activate_wp_rest_filter');
+register_deactivation_hook(__FILE__, 'deactivate_wp_rest_filter');
 
-	/**
-	 * Added support for 'before' & 'after' filtering for Custom Field
-	 * @author Jack
-	 * @see [How to filter posts modified after specific date in Wordpress API v2](https://stackoverflow.com/questions/47053462/how-to-filter-posts-modified-after-specific-date-in-wordpress-api-v2)
-	 * @todo Make it work...
-	 */
-	// if ( ( isset( $request['before'] ) || isset( $request['after'] ) ) && isset( $request['date_query_column'] ) ) {
- //        $args['date_query'][0]['column'] = $request['date_query_column'];
-	// }
+/**
+ * The core plugin class that is used to define internationalization,
+ * admin-specific hooks, and public-facing site hooks.
+ */
+require plugin_dir_path(__FILE__) . 'includes/class-wp-rest-filter.php';
 
-	return $args;
+/**
+ * Begins execution of the plugin.
+ *
+ * Since everything within the plugin is registered via hooks,
+ * then kicking off the plugin from this point in the file does
+ * not affect the page life cycle.
+ *
+ * @since    1.0.0
+ */
+function run_wp_rest_filter() {
+
+	$plugin = new Wp_Rest_Filter();
+	$plugin->run();
 
 }
+run_wp_rest_filter();

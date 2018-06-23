@@ -76,6 +76,10 @@ For more info, please [see this topic](https://wordpress.org/support/topic/empty
  
 Yes! This plugin is designed to work with CPT types too!
  
+= Does this work with Taxonomy? =
+ 
+Yes! This plugin filters Taxonomy as well. Thanks to [pull request by bplaa-yai](https://github.com/SK8-PTY-LTD/wp-rest-filter/pull/2).
+ 
 = Does this work with Advanced Custom Field? =
  
 Yes! This plugin is designed to work with ACF values too!
@@ -89,6 +93,11 @@ Issues and [pull requests](https://github.com/sk8-pty-ltd/wp-rest-filter/pulls) 
 1. An sample REST API GET request using [WP REST Filter](https://wordpress.org/plugins/wp-rest-filter/).
  
 == Changelog ==
+
+= 1.2.0 =
+
+* Added support for filtering by Taxonomy
+* Restructured Project for further development
 
 = 1.1.4 =
 
