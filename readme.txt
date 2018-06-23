@@ -49,7 +49,15 @@ Multiple Meta Queries
 fetch( 'https://domain.com/wp-json/wp/v2/cars?filter[meta_query][0][key]=currency&filter[meta_query][0][value]&filter[meta_query][1][key]=country&filter[meta_query][1][value]=Australia'); // here 'cars' is the endpoint for CPT
 ```
 
+= Technical Support =
 
+**SK8Tech - Customer Success Specialist** offers **Technical Support** to configure or install ***WP REST User***.
+
+= Our Services =
+ * [SK8Tech Sydney Web Design](https://sk8.tech/services/web-design/)
+ * [SK8Tech Enterprise Email Hosting](https://sk8.tech/services/enterprise/email-hosting/)
+ * [SK8Tech Emergency IT Support](https://sk8.tech/services/enterprise/it-support/emergency-support/)
+ * [SK8Tech WeChat Advertising](https://sk8.tech/services/wechat/)
  
 == Installation ==
   
