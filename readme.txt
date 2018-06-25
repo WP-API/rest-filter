@@ -3,7 +3,7 @@ Contributors: jack50n9, sk8tech, rachelbaker, joehoyle
 Donate link: https://sk8.tech/donate
 Tags: wp, rest, api, rest api, filter, acf, cpt, json
 Requires at least: 4.7.0
-Tested up to: 4.9.5
+Tested up to: 4.9.6
 Requires PHP: 5.2.4
 Stable tag: trunk
 License: GPLv2 or later
@@ -25,33 +25,33 @@ Use the `filter` parameter on any Post, or Custom Post Type endpoint such as `/w
 argument. ACF values are also supported. 
 
 Default Post:
-```
+`
 fetch( 'https://domain.com/wp-json/wp/v2/posts?filter[meta_key]=acfkey&filter[meta_value]=acfvalue');
-```
+`
 
 Custom Post Type
-```
+`
 fetch( 'https://domain.com/wp-json/wp/v2/cars?filter[meta_key]=currency&filter[meta_value]=AUD'); // here 'cars' is the endpoint for CPT
-```
+`
 
 Advanced Custom Field
-```
+`
 fetch( 'https://domain.com/wp-json/wp/v2/cars?filter[meta_key]=price&filter[meta_compare]=<&filter[meta_value]=200000'); // Query for car 'less' than '200000' in 'price'
-```
+`
 
 Advanced Custom Field - Date (before, equal & after)
-```
+`
 fetch( 'https://domain.com/wp-json/wp/v2/cars?filter[meta_key]=expiry_date&filter[meta_value]=2018-12-27T23:59:59&filter[meta_compare]=< // 'Expiry' Before '2018 Boxing Day ends'
-```
+`
 
 Multiple Meta Queries
-```
+`
 fetch( 'https://domain.com/wp-json/wp/v2/cars?filter[meta_query][0][key]=currency&filter[meta_query][0][value]&filter[meta_query][1][key]=country&filter[meta_query][1][value]=Australia'); // here 'cars' is the endpoint for CPT
-```
+`
 
 = Technical Support =
 
-**SK8Tech - Customer Success Specialist** offers **Technical Support** to configure or install ***WP REST User***.
+**SK8Tech - Customer Success Specialist** offers **Technical Support** to configure or install ***WP REST Filter***.
 
 = Our Services =
  * [SK8Tech Sydney Web Design](https://sk8.tech/services/web-design/)
