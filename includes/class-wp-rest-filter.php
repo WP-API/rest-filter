@@ -154,6 +154,9 @@ class Wp_Rest_Filter {
 
 		$plugin_admin = new Wp_Rest_Filter_Admin($this->get_plugin_name(), $this->get_version());
 
+		// Adds REST API Route for Process Payment
+		$this->loader->add_action('rest_api_init', $plugin_public, 'add_api_routes');
+
 		$this->loader->add_action('admin_enqueue_scripts', $plugin_admin, 'enqueue_styles');
 		$this->loader->add_action('admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts');
 
@@ -169,9 +172,6 @@ class Wp_Rest_Filter {
 	private function define_public_hooks() {
 
 		$plugin_public = new Wp_Rest_Filter_Public($this->get_plugin_name(), $this->get_version());
-
-		// Adds REST API Route for Process Payment
-		$this->loader->add_action('rest_api_init', $plugin_public, 'add_api_routes');
 
 		$this->loader->add_action('wp_enqueue_scripts', $plugin_public, 'enqueue_styles');
 		$this->loader->add_action('wp_enqueue_scripts', $plugin_public, 'enqueue_scripts');

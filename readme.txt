@@ -102,7 +102,11 @@ Issues and [pull requests](https://github.com/sk8-pty-ltd/wp-rest-filter/pulls) 
  
 == Changelog ==
 
-= 1.2.0 =
+= 1.2.2 =
+
+* Fixed a critical issue relating to custom post type
+
+= 1.2.0 (Breaking) =
 
 * Added support for filtering by Taxonomy
 * Restructured Project for further development
