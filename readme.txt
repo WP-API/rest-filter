@@ -107,7 +107,7 @@ Issues and [pull requests](https://github.com/sk8-pty-ltd/wp-rest-filter/pulls) 
  
 == Changelog ==
 
-= 1.2.3 =
+= 1.2.4 =
 
 * Fixed another critical issue relating to custom post type
 
