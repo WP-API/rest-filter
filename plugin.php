@@ -42,7 +42,7 @@ function rest_api_filter_add_filter_param( $args, $request ) {
 	$vars = apply_filters( 'rest_query_vars', $wp->public_query_vars );
 
 	// Allow valid meta query vars.
-	$vars = array_merge( $vars, array( 'meta_query', 'meta_key', 'meta_value', 'meta_compare' ) );
+	$vars = array_unique( array_merge( $vars, array( 'meta_query', 'meta_key', 'meta_value', 'meta_compare' ) ) );
 
 	foreach ( $vars as $var ) {
 		if ( isset( $filter[ $var ] ) ) {
