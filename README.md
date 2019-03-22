@@ -9,8 +9,4 @@ previously using it.
 ## Usage
 
 Use the `filter` parameter on any post endpoint such as `/wp/v2/posts` or `/wp/v2/pages` as an array of `WP_Query`
-argument like so:
-
-```javascript
-fetch( 'https://example.com/wp-json/wp/v2/posts?filter[name]=the-slug');
-```
+argument.
